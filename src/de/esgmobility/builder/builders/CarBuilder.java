@@ -1,4 +1,11 @@
-package de.esgmobility.builder;
+package de.esgmobility.builder.builders;
+
+import de.esgmobility.builder.cars.Car;
+import de.esgmobility.builder.components.Engine;
+import de.esgmobility.builder.components.GPS;
+import de.esgmobility.builder.components.Transmission;
+import de.esgmobility.builder.components.TripComputer;
+import de.esgmobility.builder.cars.Type;
 
 
 public class CarBuilder implements Builder {
@@ -38,5 +45,9 @@ public class CarBuilder implements Builder {
     @Override
     public void setGPS(GPS gps) {
         this.gps = gps;
+    }
+    
+    public Car getResult() {
+        return new Car(type, seats, engine, transmission, tripComputer, gps);
     }
 }
